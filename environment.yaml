@@ -1,12 +1,13 @@
 # Add necessary libraries & remove unused
 name: hack_doctor_schedul
-channels:
+channels: # нужен именно такой порядок каналов
+  - nvidia
   - conda-forge
+  - pytorch
+  - nodefaults
 dependencies:
   - python==3.10
   - pip
-  # pin MKL version of math libs, optimized for Inter CPUs
-  - blas=*=mkl
   # standard instruments (alphabetical order)
   # - catboost
   # - dask
@@ -20,21 +21,27 @@ dependencies:
   - scikit-learn
   - seaborn
   - tqdm
+  - u8darts-all # Dart
+  - openpyxl
   # - xgboost
   # - yellowbrick
   - pip:
     - -e .  # install git checkout of ${name} in editable mode
+    
     # add here only pip-packages that are not available in conda/conda-forge!
 
   # development (remove them from prod-ready env file)
   - icecream
   - jupyterlab
+  - ipywidgets
+  - jupyter
   - mypy
   # - nbdime
   # - nbstripout
   - pytest
   - pytest-cov
   - pytest-dotenv
+  - ipykernel
   # - recommonmark
   # - snakeviz
   # - sphinx
