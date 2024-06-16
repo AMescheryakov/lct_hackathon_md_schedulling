@@ -1,0 +1,70 @@
+[flake8]
+# Base flake8 configuration:
+# https://flake8.pycqa.org/en/latest/user/configuration.html
+# WPS linter violations:
+# https://wemake-python-styleguide.readthedocs.io/en/latest/pages/usage/violations/index.html
+format = wemake
+show-source = true
+statistics = false
+doctests = true
+
+# Plugins:
+inline-quotes = double
+max-complexity = 6
+max-line-length = 120
+max-line-complexity = 16
+max-local-variables = 10
+max-module-members = 10
+extend-ignore = E203
+docstring_style=google
+
+ignore =
+  ; Missing docstring in public module
+  D100,
+  ; Missing docstring in magic method
+  D105,
+  ; Missing docstring in public nested class
+  D106,
+  ; Missing docstring in __init__
+  D107,
+  ; Found `f` string
+  WPS305,
+  ; Found class without a base class
+  WPS306,
+  ; Found `__init__.py` module with logic
+  WPS326,
+  ; Found `__init__.py` module with logic
+  WPS412,
+
+per-file-ignores =
+  ; all tests
+  test_*.py,tests.py,tests_*.py,*/tests/*,conftest.py:
+  ; Use of assert detected
+  S101,
+  ; Found outer scope names shadowing
+  WPS442,
+  ; Found too many local variables
+  WPS210,
+  ; Found magic number
+  WPS432,
+  ; Missing parameter(s) in Docstring
+  DAR101,
+
+  ; all init files
+  __init__.py:
+  ; ignore not used imports
+  F401,
+  ; ignore import with wildcard
+  F403,
+  ; Found wrong metadata variable
+  WPS410,
+
+# Excluding some directories:
+exclude =
+  .git
+  __pycache__
+  .venv
+  .eggs
+  *.egg
+  dist
+  docs

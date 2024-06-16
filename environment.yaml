@@ -1,0 +1,40 @@
+# Add necessary libraries & remove unused
+name: hack_doctor_schedul
+channels:
+  - conda-forge
+dependencies:
+  - python==3.10
+  - pip
+  # pin MKL version of math libs, optimized for Inter CPUs
+  - blas=*=mkl
+  # standard instruments (alphabetical order)
+  # - catboost
+  # - dask
+  - hydra-core
+  # - lightgbm
+  - matplotlib
+  - numpy
+  # - optuna
+  - pandas
+  - python-dotenv
+  - scikit-learn
+  - seaborn
+  - tqdm
+  # - xgboost
+  # - yellowbrick
+  - pip:
+    - -e .  # install git checkout of ${name} in editable mode
+    # add here only pip-packages that are not available in conda/conda-forge!
+
+  # development (remove them from prod-ready env file)
+  - icecream
+  - jupyterlab
+  - mypy
+  # - nbdime
+  # - nbstripout
+  - pytest
+  - pytest-cov
+  - pytest-dotenv
+  # - recommonmark
+  # - snakeviz
+  # - sphinx

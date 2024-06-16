@@ -1,0 +1,7 @@
+[core]
+    remote = myremote
+['remote "myremote"']
+    url = s3://dvc/projects/hack_doctor_schedul
+    endpointurl = http://datalab740:9000
+    access_key_id = 
+    secret_access_key = 
