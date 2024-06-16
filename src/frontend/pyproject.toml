@@ -1,0 +1,70 @@
+[build-system]
+requires = ["setuptools", "setuptools-scm"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "doctor_ui"
+description = "Streamlit frontend for doctor scheduling."
+authors = [
+    {name = "Cinimex", email = "info@cinimex.ru"}
+]
+version = "1.0.0"
+readme = "README.md"
+license = {text = "MIT License"}
+requires-python = ">= 3.11"
+dependencies = [
+    "millify",
+    "omegaconf",
+    "pandas",
+    "pydantic[dotenv]",
+    "pydantic_settings",
+    "sqlalchemy",
+    "psycopg[binary,pool]",
+    "streamlit",
+    "streamlit-calendar",
+    "streamlit-option-menu",
+    "ujson",
+]
+
+[tool.setuptools.packages.find]
+include = ["doctor_ui"]
+namespaces = false
+
+[tool.black]
+line-length = 120
+target-version = ['py311']
+include = '\.pyi?$'
+exclude = '''
+(
+    /(
+        \.eggs
+        | \.git
+        | \.hg
+        | \.mypy_cache
+        | \.tox
+        | \.venv
+        | _build
+        | buck-out
+        | build
+        | dist
+        | docs
+    )/
+)
+'''
+
+[tool.mypy]
+python_version = "3.11"
+# strict = true
+ignore_missing_imports = true
+allow_subclassing_any = true
+allow_untyped_calls = true
+pretty = true
+show_error_codes = true
+implicit_reexport = true
+allow_untyped_decorators = true
+warn_return_any = false
+warn_unused_configs = true
+plugins = ["numpy.typing.mypy_plugin", "pydantic.mypy", "sqlalchemy.ext.mypy.plugin"]
+
+[tool.refurb]
+python_version = "3.11"
