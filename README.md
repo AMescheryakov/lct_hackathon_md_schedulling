@@ -5,7 +5,26 @@
 
 Репозиторий содержит следующие ветки:
 1. feature/frontend - Содержит веб-интерфейс для сервиса
+
+    Путь: /src/frontend
+
 2. feature/md_distribution_script - Содержит скрипт для распределения нарузки по врачам
+
+    Путь: src/hack_doctor_schedul/md_distribution
+
 3. feature/ffill_experiments - Содержит блокнот с экспериментами по удалению выбросов и прогнозам временных рядов без них
+
+    Путь: notebooks/amecheryakov
+
 4. feature/make_dset - Содержит блокнот с предобработкой данных для анализа и подготовки моделей
+
+    Путь: notebooks/mvatkin
+
 5. feature/naive - Содержит блокнот с анализом метрик наивных моделей
+
+    Путь: notebooks/akrylov
+
+### Readme файлы
+Приложение для составления графика: src\frontend\README.md
+
+Алгоритм распределения нагрузки врачей-рентгенологов: src\hack_doctor_schedul\md_distribution\README.md
