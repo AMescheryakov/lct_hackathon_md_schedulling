@@ -1,5 +1,4 @@
 from hack_doctor_schedul.md_distribution import md_distribution as mdd
-import pandas as pd
 from pathlib import Path
 
 # Global variables
@@ -43,7 +42,7 @@ test_norm = [
         "cost": 3.7,
         "md_type": "mmg",
     },
-        {
+    {
         "name": "МРТ",
         "cost": 15.1,
         "md_type": "mri",
