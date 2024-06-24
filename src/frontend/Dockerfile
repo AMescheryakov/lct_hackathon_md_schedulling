@@ -6,10 +6,8 @@ COPY setup.py /app/src/
 
 WORKDIR /app/src
 
-# Copying actual application
-COPY ./doctor_ui /app/src/doctor_ui
-RUN pip install --no-cache-dir --upgrade .
+# Copying application
+COPY . /app/src/
+RUN pip install -e .
 
-# Copy styles
-COPY ./css /app/src/
 CMD ["streamlit", "run", "doctor_ui/app.py"]
